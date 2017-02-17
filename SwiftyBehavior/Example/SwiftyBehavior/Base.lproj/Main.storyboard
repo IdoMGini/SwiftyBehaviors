@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Owner-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="r0w-hL-dlt" customClass="SBTiltParallaxAnimationBehaviour" customModule="SwiftyBehavior">
+                    <connections>
+                        <outlet property="owner" destination="vXZ-lx-hvc" id="ErU-TN-86f"/>
+                        <outlet property="targetView" destination="Uj5-m8-uia" id="4W9-O1-Cpl"/>
+                    </connections>
+                </customObject>
+                <customObject id="s3G-E6-Jaz" customClass="SBImagePickerBehaviour" customModule="SwiftyBehavior">
+                    <connections>
+                        <outlet property="owner" destination="vXZ-lx-hvc" id="DEE-co-9Ns"/>
+                        <outlet property="targetImageView" destination="Uj5-m8-uia" id="6cp-pc-eq8"/>
+                    </connections>
+                </customObject>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SwiftyBehavior_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Uj5-m8-uia">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPM-lL-Zsi">
+                                <rect key="frame" x="16" y="581" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSb-ly-tuv">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.57767857140000001" green="0.95228794640000003" blue="0.70136718750000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pickImageFrom:forEvent:" destination="s3G-E6-Jaz" eventType="touchUpInside" id="trv-la-nmi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uj5-m8-uia" secondAttribute="trailing" id="8cU-OL-c1Q"/>
+                            <constraint firstItem="uPM-lL-Zsi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Fu2-ke-RQf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Uj5-m8-uia" secondAttribute="bottom" id="O4m-AV-nyt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mSb-ly-tuv" secondAttribute="trailing" id="YAJ-Tz-Eep"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uPM-lL-Zsi" secondAttribute="trailing" id="dmT-T9-bE0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="uPM-lL-Zsi" secondAttribute="bottom" constant="50" id="hFd-Dn-cO2"/>
+                            <constraint firstItem="Uj5-m8-uia" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="jXE-hJ-KXp"/>
+                            <constraint firstItem="mSb-ly-tuv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="jjn-j3-dg3"/>
+                            <constraint firstItem="Uj5-m8-uia" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="tGz-ZK-86n"/>
+                            <constraint firstItem="mSb-ly-tuv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="wLU-LS-B5G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Uj5-m8-uia" id="xtq-OQ-K9z"/>
+                    </connections>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="968" height="969"/>
+    </resources>
+</document>

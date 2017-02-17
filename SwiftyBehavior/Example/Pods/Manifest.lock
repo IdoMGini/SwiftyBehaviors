@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyBehavior (0.1.0)
+
+DEPENDENCIES:
+  - SwiftyBehavior (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftyBehavior:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftyBehavior: 71318091f35bdcbb0183d9f1bcc0c7cbb6892b6b
+
+PODFILE CHECKSUM: 3bda7b2195927cc81f5d90e9f8c015170c5818b1
+
+COCOAPODS: 1.1.1
